@@ -22,32 +22,8 @@
 
       ({pkgs, ...}: {
         networking.hostName = "noble";
-        networking.networkmanager.ensureProfiles.profiles = {
-          "KOST_VANIA" = {
-            connection = {
-              id = "KOST VANIA";
-              type = "wifi";
-            };
-            wifi = {
-              mode = "infrastructure";
-              ssid = "KOST VANIA";
-            };
-            wifi-security = {
-              key-mgmt = "wpa-psk";
-              psk = "kostvania245";
-            };
-          };
-        };
         time.timeZone = "Asia/Jakarta";
         i18n.defaultLocale = "en_US.UTF-8";
-
-        services.openssh = {
-          enable = true;
-          settings = {
-            PasswordAuthentication = true;
-            PermitRootLogin = "prohibit-password";
-          };
-        };
 
         users.users = {
           noble = {
@@ -85,7 +61,7 @@
             developerKernelAccess = true;
             audio = true;
             bluetooth = true;
-            opentabletdriver = false;
+            opentabletdriver = true;
 
             # Mesh VPN
             tailscale = true;
@@ -94,9 +70,9 @@
             ollama = false;
 
             # Virtualization
-            docker = false;
-            waydroid = false;
-            libvirt = false;
+            docker = true;
+            waydroid = true;
+            libvirt = true;
 
             # Gaming
             gaming = false;
@@ -110,8 +86,8 @@
           };
 
           extra = {
-            xinu = false;
-            stealth = false;
+            xinu = true;
+            stealth = true;
           };
         };
 

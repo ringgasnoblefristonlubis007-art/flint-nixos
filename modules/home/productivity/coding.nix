@@ -39,6 +39,8 @@
           enable = true;
           nix-direnv.enable = true;
         };
+
+        vscode.enable = true;
       };
 
       home = {
@@ -52,6 +54,14 @@
           bubblewrap
           jq
           lazydocker
+          gcc
+          gdb
+          gnumake
+          python3
+          nodejs
+          go
+          gopls
+          jdk
         ];
       };
     };

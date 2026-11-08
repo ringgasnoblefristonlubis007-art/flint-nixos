@@ -19,7 +19,8 @@ make -C xinu-vbox/compile
 install -d -m 755 /var/tmp/xinu-tftp
 install -m 644 xinu-vbox/tftpboot/xinu.boot /var/tmp/xinu-tftp/xinu.boot
 virsh -c qemu:///system net-define xinu_net.xml || true
+virsh -c qemu:///system net-start xinu_net || true
+virsh -c qemu:///system net-autostart xinu_net || true
 virsh -c qemu:///system define backend.xml || true
-virsh -c qemu:///system net-autostart xinu_net --disable || true
 virsh -c qemu:///system autostart backend --disable || true
 '
