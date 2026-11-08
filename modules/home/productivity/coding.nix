@@ -20,8 +20,8 @@
           settings = {
             # CHANGEME
             user = {
-              name = "davindakhrisna";
-              email = "arpeggio.gns@gmail.com";
+              name = "ringgasnoblefristonlubis007-art";
+              email = "ringgasnoblefristonlubis007@gmail.com";
             };
             init.defaultBranch = "main";
             safe.directory = [
