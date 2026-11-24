@@ -55,10 +55,13 @@ in {
       ];
     };
 
-    xdg.configFile."nvim" = {
-      source = ./nvim;
-      recursive = true;
-      force = true;
+    xdg.configFile = {
+      "nvim" = {
+        source = ./nvim;
+        recursive = true;
+        force = true;
+      };
+      "nvim/init.lua".enable = lib.mkForce false;
     };
   };
 }

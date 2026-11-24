@@ -74,14 +74,20 @@
     // Spacer between Clock and MPRIS
     "custom/spacer": {
         "format": "──────────",
+        "align": 0.5,
+        "justify": "center",
         "tooltip": false
     }, // Arrow
     "custom/arrow-up": {
         "format": "▲",
+        "align": 0.5,
+        "justify": "center",
         "tooltip": false
     }, // Arrow
     "custom/arrow-down": {
         "format": "▼",
+        "align": 0.5,
+        "justify": "center",
         "tooltip": false
     },
     // Media Player

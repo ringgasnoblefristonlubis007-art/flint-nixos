@@ -159,6 +159,7 @@ tooltip label {
 #custom-arrow-down,
 #custom-spacer {
     font-size: 6px;
+    min-width: 48px;
     padding: 0;
     background: transparent;
 }
