@@ -62,6 +62,8 @@
           go
           gopls
           jdk
+          php
+          phpPackages.composer
         ];
       };
     };

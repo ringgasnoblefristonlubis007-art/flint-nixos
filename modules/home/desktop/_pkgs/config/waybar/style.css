@@ -143,7 +143,8 @@ tooltip label {
 #custom-launcher {
     font-size: 20px;
     color: @base07;
-    padding: 6px;
+    padding: 6px 0;
+    min-width: 44px;
     margin-bottom: 0;
     border-bottom: 1px solid @border_color;
 }
@@ -219,6 +220,10 @@ tooltip label {
     border-radius: 0;
 }
 
+#custom-focusmode {
+    min-width: 28px;
+}
+
 #custom-focusmode.off {
     color: @base04;
 }
@@ -255,9 +260,10 @@ tooltip label {
 }
 
 #custom-power {
-    font-size: 18px;
+    font-size: 20px;
     color: @base06;
-    padding: 8px;
+    padding: 6px 0;
+    min-width: 44px;
     margin-top: 12px;
     border-top: 1px solid @border_color;
 }
