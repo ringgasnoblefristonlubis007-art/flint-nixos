@@ -8,16 +8,17 @@ mkdir -p "$RUNTIME_DIR"
 chmod 700 "$RUNTIME_DIR"
 STATUS_FILE="$RUNTIME_DIR/hypr_focusmode_active"
 
-if [ -f "$STATUS_FILE" ]; then
-    # --- DISABLE FOCUS MODE ---
-    rm -f "$STATUS_FILE"
-    systemctl --user start hypridle.service 2>/dev/null || true
-    notify-send -u normal -i preferences-desktop-screensaver "Focus Mode" "Focus Mode <b>DISABLED</b>\nIdle timer and auto-lock restored."
+if [ -f "$STATUS_FILE" ] && ! pgrep -x hypridle >/dev/null 2>&1; then
+	# --- DISABLE FOCUS MODE ---
+	rm -f "$STATUS_FILE"
+	systemctl --user start hypridle.service 2>/dev/null || true
+	notify-send -u normal -i preferences-desktop-screensaver "Focus Mode" "Focus Mode <b>DISABLED</b>\nIdle timer and auto-lock restored."
 else
-    # --- ENABLE FOCUS MODE ---
-    touch "$STATUS_FILE"
-    systemctl --user stop hypridle.service 2>/dev/null || pkill -x hypridle 2>/dev/null || true
-    notify-send -u normal -i preferences-desktop-screensaver "Focus Mode" "Focus Mode <b>ENABLED</b>\nIdle timer and screen lock turned off."
+	# --- ENABLE FOCUS MODE ---
+	touch "$STATUS_FILE"
+	systemctl --user stop hypridle.service 2>/dev/null || true
+	pkill -x hypridle 2>/dev/null || true
+	notify-send -u normal -i preferences-desktop-screensaver "Focus Mode" "Focus Mode <b>ENABLED</b>\nIdle timer and screen lock turned off."
 fi
 
 # Signal Waybar to refresh custom/focusmode immediately (signal 8)
